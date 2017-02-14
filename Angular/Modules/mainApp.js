@@ -26,16 +26,46 @@ main.config([
                 caseInsensitiveMatch: true,
                 controller: 'MainController'
             })
-            .state('about', {
-                url: '/about',
-                templateUrl: 'About.html',
+            .state('arena', {
+                url: '/arena',
+                templateUrl: 'Arena.html',
                 caseInsensitiveMatch: true,
                 controller: 'MainController'
+            })
+            .state('arena.stage', {
+              url: '/stage',
+              views: {
+                '': { templateUrl: 'stage.html' },
+                'attacker': {
+                  url: '/attacker',
+                  templateUrl: 'Attacker.html',
+                  controller: 'MainController'
+                },
+                'defender': {
+                  url: '/defender',
+                  templateUrl: 'Defender.html',
+                  controller: 'MainController'
+                },
+                'stats': {
+                  url: '/stats',
+                  templateUrl: 'Stats.html',
+                  controller: 'MainController'
+                }
+              }
             });
+            // .state('arena.attacker', {
+            //
+            // })
+            // .state('arena.defender', {
+            //
+            // })
+            // .state('arena.stats', {
+            //
+            // })
     }
 ]);
 
-//below factory code is for authentication, User Current Session Need to Get and get to go
+
 main.factory('mainFactory', ($resource, $rootScope, $http) => {
 
   // Your code here

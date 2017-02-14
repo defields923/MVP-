@@ -16,7 +16,7 @@
     <script src="angular-resource.js"></script>
     <script src="/Modules/mainApp.js"></script>
     <script src="/Controllers/MainController.js"></script>
-    <script src="/Controllers/AuthController.js"></script>
+    <script src="/Controllers/CharController.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,14 +27,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/home">Fire Emblem Arena</a>
+                <a class="navbar-brand" ui-sref="home">Fire Emblem Arena</a>
             </div>
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#/home">Home</a></li>
-                    <li><a href="#/about">About</a></li>
-                    <li><a href="#/contact">Contact</a></li>
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="arena">Arena</a></li>
+                    <%# <li><a href="#/contact">Contact</a></li>%>
                 </ul>
             </div>
         </div>

@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt-nodejs');
 var session = require('express-session');
 var mongoose = require('mongoose');
-var models_user = require('./Angular/Models/user.js');
 let PORT = process.env.PORT || 3000;
 
 //connection database
