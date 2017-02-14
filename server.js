@@ -6,8 +6,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt-nodejs');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
 var mongoose = require('mongoose');
 var models_user = require('./Angular/Models/user.js');
@@ -26,15 +24,9 @@ app.set('views', path.join(__dirname, 'Views'));
 app.set('view engine', 'ejs');
 
 //tell node the global configuration about parser,logger and passport
-app.use(cookieParser());
 app.use(logger('dev'));
-app.use(session({
-  secret: 'keyboard cat'
-}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(passport.initialize()); //initializing passport
-app.use(passport.session()); //initializing passport session
 
 //tell node about these directories that application may get resources from
 app.use('/', router);
@@ -43,7 +35,6 @@ app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(express.static(path.join(__dirname, 'Content')));
 app.use(express.static(path.join(__dirname, 'Angular')));
 app.use(express.static(path.join(__dirname, 'Views/Main')));
-app.use(express.static(path.join(__dirname, 'Views/Authentication')));
 
 
 //running server on node
