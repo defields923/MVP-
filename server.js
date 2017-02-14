@@ -11,6 +11,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var session = require('express-session');
 var mongoose = require('mongoose');
 var models_user = require('./Angular/Models/user.js');
+let PORT = process.env.PORT || 3000;
 
 //connection database
 mongoose.connect('mongodb://devin:439devin@ds151059.mlab.com:51059/test-database');
@@ -52,7 +53,7 @@ var initPassport = require('./Passport/passport-init');
 initPassport(passport);
 
 //running server on node
-var server = app.listen(3000, function () {
+var server = app.listen(PORT, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
