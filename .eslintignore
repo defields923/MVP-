@@ -1,0 +1,8 @@
+/node_modules
+/.git
+*.md
+package.json
+/AngularizeWebsite/Passport
+/AngularizeWebsite/node_modules
+/AngularizeWebsite/scripts
+/AngularizeWebsite/Public

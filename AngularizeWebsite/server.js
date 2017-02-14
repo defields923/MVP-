@@ -1,4 +1,4 @@
-//adding opensource modules to application 
+//adding opensource modules to application
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 var models_user = require('./Angular/Models/user.js');
 
 //connection database
-mongoose.connect('mongodb://localhost/AngularizeApp');
+mongoose.connect('mongodb://devin:439devin@ds151059.mlab.com:51059/test-database');
 
 //import the routers
 var router = require('./Routes/router');

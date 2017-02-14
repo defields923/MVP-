@@ -29,21 +29,12 @@
                 </button>
                 <a class="navbar-brand" href="#/home">Application name</a>
             </div>
-            
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#/home">Home</a></li>
                     <li><a href="#/about">About</a></li>
                     <li><a href="#/contact">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><p class="navbar-right navbar-text">Signed in as {{current_user}}</p></li>
-                    <li><p class="navbar-right navbar-text" ng-hide="authenticated">
-                        <a href="#/login">Login</a> or <a href="#/register">Register</a>
-                    </p></li>
-                    <li><p class="navbar-right navbar-text" ng-show="authenticated">
-                        <a href="#" ng-click="signout()">Logout</a>
-                    </p></li>
                 </ul>
             </div>
         </div>
