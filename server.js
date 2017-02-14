@@ -18,8 +18,6 @@ mongoose.connect('mongodb://devin:439devin@ds151059.mlab.com:51059/test-database
 
 //import the routers
 var router = require('./Routes/router');
-var authenticate = require('./Routes/authentication')(passport);
-
 //for using express throughout this application
 var app = express();
 
@@ -40,17 +38,13 @@ app.use(passport.session()); //initializing passport session
 
 //tell node about these directories that application may get resources from
 app.use('/', router);
-app.use('/auth', authenticate);
+
 app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(express.static(path.join(__dirname, 'Content')));
 app.use(express.static(path.join(__dirname, 'Angular')));
 app.use(express.static(path.join(__dirname, 'Views/Main')));
 app.use(express.static(path.join(__dirname, 'Views/Authentication')));
 
-
-//providing auth-api to passport so that it can use it.
-var initPassport = require('./Passport/passport-init');
-initPassport(passport);
 
 //running server on node
 var server = app.listen(PORT, function () {
