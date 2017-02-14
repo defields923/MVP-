@@ -12,7 +12,6 @@ module.exports = {
   getChars: function (req, res, next) {
     findAllLinks({})
       .then((chars) => {
-        console.log(chars, 'HEY');
         res.json(chars);
       })
       .fail((error) => {

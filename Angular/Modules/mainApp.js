@@ -46,12 +46,19 @@ main.controller('MainController', ($rootScope, $scope, mainFactory) => {
 
     $scope.getCharacters = () => {
         mainFactory.getAll().then((data) => {
-          console.log(data);
           $scope.characters = data;
         });
     };
 
     $scope.getCharacters();
+    $scope.changeAttacker = (char) => {
+      $scope.attacker = char;
+      console.log($scope.attacker);
+    };
+    $scope.changeDefender = (char) => {
+      $scope.defender = char;
+      console.log($scope.defender);
+    };
 
 });
 
@@ -59,7 +66,6 @@ main.factory('mainFactory', ($resource, $rootScope, $http) => {
 
   // Your code here
   var getAll = function () {
-    console.log('IM BEING CALLED');
     return $http({
       method: 'GET',
       url: '/retrieve/chars'

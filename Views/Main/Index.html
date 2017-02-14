@@ -1,28 +1,28 @@
 ﻿<div ng-controller="MainController">
     <div class="jumbotron">
         <h1>Character Roster</h1>
-        <p class="lead">{{characters}}</p>
+        <p class="lead"></p>
     </div>
     <div ng-repeat="char in characters">
         <h2>{{ char.name }}</h2>
-        <!-- <img src="{{ char.image }}"/> -->
+        <img src="{{ char.image }}" style={"float":"left"}/>
         <p>
-            {{char.bhp}}
+            HP: {{char.bhp}}
         </p>
         <p>
-            {{char.bstr}}
+            STRENGTH: {{char.bstr}}
         </p>
         <p>
-            {{char.bskl}}
+            SKILL: {{char.bskl}}
         </p>
         <p>
-            {{char.bspd}}
+            SPEED: {{char.bspd}}
         </p>
         <p>
-            {{char.bdef}}
+            DEFENSE: {{char.bdef}}
         </p>
         <p>
-            {{char.bres}}
+            RESISTENCE: {{char.bres}}
         </p>
     </div>
 </div>

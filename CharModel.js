@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Characters = new mongoose.Schema({
+var Chars = new mongoose.Schema({
   name: String,
   bhp: Number,
   bstr: Number,
@@ -18,4 +18,9 @@ var Characters = new mongoose.Schema({
   image: String
 });
 
-module.exports = mongoose.model('Characters', Characters);
+
+const qu = mongoose.model('Chars', Chars);
+
+
+
+module.exports = qu;

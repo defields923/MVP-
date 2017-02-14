@@ -1,4 +1,7 @@
-<div><h4>II. The foo.bar state</h4>
-  <a ui-sref=".defender">Defender:</a>
+<div ng-controller="MainController"><h4>Choose a defender</h4>
+  <div ng-repeat="char in characters">
+    <a ui-sref=".defender" ng-click="changeDefender(char)">{{char.name}}</a>
+  </div>
+
   <div ui-view></div>
 </div>

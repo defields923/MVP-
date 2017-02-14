@@ -1,7 +1,10 @@
-<div>
+<div ng-controller="MainController">
     <h1>The Arena</h1>
-    <h3>I. The foo state</h3>
-    <a ui-sref=".attacker">Attacker:</a>
+    <h3>Choose an attacker</h3>
+    <div ng-repeat="char in characters">
+        <a ui-sref=".attacker" ng-click="changeAttacker(char)">{{char.name}}</a>
+    </div>
+    <!-- <a ui-sref=".attacker">Attacker:</a> -->
     <div>
 
     </div>

@@ -3,9 +3,8 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
+
 var bodyParser = require('body-parser');
-var bcrypt = require('bcrypt-nodejs');
 var session = require('express-session');
 var mongoose = require('mongoose');
 let PORT = process.env.PORT || 3000;
@@ -40,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'Views/Main')));
 var server = app.listen(PORT, function () {
   var host = server.address().address;
   var port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('app is listening... ', host, port);
 });
 
 //exporting this application as a module
