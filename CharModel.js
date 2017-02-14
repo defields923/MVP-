@@ -18,4 +18,4 @@ var Characters = new mongoose.Schema({
   image: String
 });
 
-module.exports = mongoose.model('Character', Characters);
+module.exports = mongoose.model('Characters', Characters);

@@ -11,7 +11,7 @@ const main = angular.module("main", ['ui.router','ngRoute','ngResource'])
 //Routing Configuration (define routes)
 main.config([
     '$stateProvider', '$urlRouterProvider', '$httpProvider',
-    function ($stateProvider, $urlRouterProvider, $rootScope) {
+    function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('home', {
@@ -20,61 +20,54 @@ main.config([
                 caseInsensitiveMatch: true,
                 controller: 'MainController'
             })
-            .state('contact', {
-                url: '/contact',
-                templateUrl: 'Contact.html',
-                caseInsensitiveMatch: true,
-                controller: 'MainController'
-            })
             .state('arena', {
-                url: '/arena',
-                templateUrl: 'Arena.html',
-                caseInsensitiveMatch: true,
-                controller: 'MainController'
+              url: '/arena',
+              templateUrl: 'Arena.html'
             })
-            .state('arena.stage', {
-              url: '/stage',
-              views: {
-                '': { templateUrl: 'stage.html' },
-                'attacker': {
-                  url: '/attacker',
-                  templateUrl: 'Attacker.html',
-                  controller: 'MainController'
-                },
-                'defender': {
-                  url: '/defender',
-                  templateUrl: 'Defender.html',
-                  controller: 'MainController'
-                },
-                'stats': {
-                  url: '/stats',
-                  templateUrl: 'Stats.html',
-                  controller: 'MainController'
-                }
-              }
+            .state('arena.attacker', {
+              url: '/attacker',
+              templateUrl: 'Attacker.html'
+            })
+            .state('arena.attacker.defender', {
+              url: '/defender',
+              templateUrl: 'Defender.html'
+            })
+            .state('arena.attacker.defender.stats', {
+              url: '/stats',
+              templateUrl: 'Stats.html'
             });
-            // .state('arena.attacker', {
-            //
-            // })
-            // .state('arena.defender', {
-            //
-            // })
-            // .state('arena.stats', {
-            //
-            // })
     }
 ]);
 
+main.controller('MainController', ($rootScope, $scope, mainFactory) => {
+    $scope.attacker = {};
+    $scope.defender = {};
+    $scope.characters = [];
+
+    $scope.getCharacters = () => {
+        mainFactory.getAll().then((data) => {
+          console.log(data);
+          $scope.characters = data;
+        });
+    };
+
+    $scope.getCharacters();
+
+});
 
 main.factory('mainFactory', ($resource, $rootScope, $http) => {
 
   // Your code here
   var getAll = function () {
+    console.log('IM BEING CALLED');
     return $http({
       method: 'GET',
-      url: '/api/links'
+      url: '/retrieve/chars'
     })
-    .then( (resp) => resp.data );
+    .then( (resp) => {
+      console.log('IM RETURNING:', resp.data);
+      return resp.data
+    });
   };
 
   var getOne = function(link) {

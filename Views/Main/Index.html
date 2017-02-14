@@ -1,11 +1,11 @@
 ﻿<div ng-controller="MainController">
     <div class="jumbotron">
         <h1>Character Roster</h1>
-        <p class="lead"></p>
+        <p class="lead">{{characters}}</p>
     </div>
-    <!-- <div ng-repeat="char in characters">
+    <div ng-repeat="char in characters">
         <h2>{{ char.name }}</h2>
-        <img src="{{ char.image }}"/>
+        <!-- <img src="{{ char.image }}"/> -->
         <p>
             {{char.bhp}}
         </p>
@@ -24,5 +24,5 @@
         <p>
             {{char.bres}}
         </p>
-    </div> -->
+    </div>
 </div>

@@ -1,17 +1,18 @@
 //auth controller
 var Q = require('q');
 
-var Char = require('../Models/linkModel.js');
+var Char = require('./CharModel.js');
 
 // Promisify a few mongoose methods with the `q` promise library
-const findLink = Q.nbind(Link.findOne, Char);
-const findAllLinks = Q.nbind(Link.find, Char);
+const findLink = Q.nbind(Char.findOne, Char);
+const findAllLinks = Q.nbind(Char.find, Char);
 
 module.exports = {
 
   getChars: function (req, res, next) {
     findAllLinks({})
       .then((chars) => {
+        console.log(chars, 'HEY');
         res.json(chars);
       })
       .fail((error) => {
