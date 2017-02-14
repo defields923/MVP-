@@ -1,7 +1,7 @@
-<div ng-controller="MainController"><h4>Choose a defender</h4>
+<img src={{attacker.image}}/>
+<div ng-controller="MainController" style="float:right;"><h3>Choose a defender</h3>
   <div ng-repeat="char in characters">
     <a ui-sref=".defender" ng-click="changeDefender(char)">{{char.name}}</a>
   </div>
-
-  <div ui-view></div>
+  <div ui-view ></div>
 </div>

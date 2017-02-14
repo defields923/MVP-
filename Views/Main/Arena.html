@@ -1,12 +1,11 @@
-<div ng-controller="MainController">
+<div ng-controller="MainController" class=".container-fluid">
     <h1>The Arena</h1>
     <h3>Choose an attacker</h3>
     <div ng-repeat="char in characters">
         <a ui-sref=".attacker" ng-click="changeAttacker(char)">{{char.name}}</a>
     </div>
     <!-- <a ui-sref=".attacker">Attacker:</a> -->
-    <div>
-
+    <div style="float:left;">
+        <div ui-view></div>
     </div>
-<div ui-view></div>
 </div>
