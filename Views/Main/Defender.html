@@ -1,6 +1,20 @@
+<h3>{{defender.name}}</h3>
 <img src={{defender.image}}/>
-<div style="float:right;">
+<div style="float:right;" ng-model="myModel">
+  <h2>Level Up:</h2>
+  <div>
+    <form ng-submit="levelUpAttacker(field1)">
+      Level up {{attacker.name}}:
+      <input type="text" ng-model="field1" name="field1"/>
+      <input type="submit" value="level" />
+    </form>
+    <form ng-submit="levelUpDefender(field2)">
+      Level up {{defender.name}}:
+      <input type="text" ng-model="field2" name="field2" />
+      <input type="submit" value="level" />
+    </form>
+  </div>
   <h3>Battle results</h3>
-  <a ui-sref=".stats" >Stats:</a>
+  <a ui-sref=".stats" ng-click="calculateDamage()">Stats:</a>
   <div ui-view></div>
 </div>

@@ -1,3 +1,59 @@
-<div><h5>IV. The foo.bar.baz.biz state</h5>
+<div>
+  <table class="GeneratedTable" >
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>TYPE</th>
+        <th>HP</th>
+        <th>STRENGTH</th>
+        <th>SKILL</th>
+        <th>SPEED</th>
+        <th>DEFENSE</th>
+        <th>RESISTENCE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{attacker.name}}</td>
+        <td>{{attacker.type}}</td>
+        <td>{{attacker.bhp}}</td>
+        <td>{{attacker.bstr}}</td>
+        <td>{{attacker.bskl}}</td>
+        <td>{{attacker.bspd}}</td>
+        <td>{{attacker.bdef}}</td>
+        <td>{{attacker.bres}}</td>
+      </tr>
+      <tr>
+        <td>{{defender.name}}</td>
+        <td>{{attacker.type}}</td>
+        <td>{{defender.bhp}}</td>
+        <td>{{defender.bstr}}</td>
+        <td>{{defender.bskl}}</td>
+        <td>{{defender.bspd}}</td>
+        <td>{{defender.bdef}}</td>
+        <td>{{defender.bres}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="GeneratedTable" >
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>REMAINING HP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{attacker.name}}</td>
+        <td>{{battleResults.attHP}}</td>
+      </tr>
+      <tr>
+        <td>{{defender.name}}</td>
+        <td>{{battleResults.defHP}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <div ui-view></div>
 </div>
