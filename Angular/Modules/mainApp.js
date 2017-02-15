@@ -48,7 +48,6 @@ main.controller('MainController', ($rootScope, $scope, mainFactory) => {
 
     $scope.getLevels = () => {
       let i = 1;
-
       while (i <= 40) {
         $scope.levels.push(i);
         i += 1;
@@ -79,14 +78,14 @@ main.controller('MainController', ($rootScope, $scope, mainFactory) => {
       const char = $scope.attacker;
       const temp = JSON.parse(JSON.stringify(char));
       $scope.attacker = $scope.levelUp(temp, num);
-      console.log(num, $scope.defender, 'defender');
+      $scope.attacker.lvl = num;
 
     };
     $scope.levelUpDefender = (num) => {
       const char = $scope.defender;
       const temp = JSON.parse(JSON.stringify(char));
       $scope.defender = $scope.levelUp(temp, num);
-      console.log(num, $scope.defender, 'defender');
+      $scope.defender.lvl = num;
     };
     $scope.levelUp = (obj, num) => {
       for (let i = 0; i < num; i++) {
