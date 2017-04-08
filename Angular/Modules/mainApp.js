@@ -1,4 +1,4 @@
-/* global angular */
+/* global angular */ 
 angular.module('App', ['ui.router','ngRoute','ngResource'])
 .run(($http, $rootScope) => {}).config([
     '$stateProvider', '$urlRouterProvider', '$httpProvider',
