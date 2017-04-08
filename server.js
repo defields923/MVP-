@@ -5,19 +5,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var bodyParser = require('body-parser');
-var session = require('express-session');
 var mongoose = require('mongoose');
+require('dotenv').config();
 let PORT = process.env.PORT || 3000;
 
 //connection database
-mongoose.connect('mongodb://devin:439devin@ds151059.mlab.com:51059/test-database');
+mongoose.connect(process.env.MONGODB);
 
 //import the routers
 var router = require('./Routes/router');
-//for using express throughout this application
 var app = express();
 
-//tell node that My application will use ejs engine for rendering, view engine setup
 app.set('views', path.join(__dirname, 'Views'));
 app.set('view engine', 'ejs');
 
@@ -37,9 +35,9 @@ app.use(express.static(path.join(__dirname, 'Views/Main')));
 
 //running server on node
 var server = app.listen(PORT, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log('app is listening... ', host, port);
+  // var host = server.address().address;
+  // var port = server.address().port;
+  console.warn('app is listening... ');
 });
 
 //exporting this application as a module

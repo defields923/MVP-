@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="main">
+<html ng-app="App">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +8,15 @@
     <link href="bootstrap.css" rel="stylesheet" />
     <link href="Site.css" rel="stylesheet" />
     <script src="modernizr-2.6.2.js"></script>
-    <script src="jquery-1.10.2.js"></script>
+    <script src="jquery-1.10.2.min.js"></script>
     <script src="bootstrap.js"></script>
-    <script src="angular.js"></script>
+    <script src="angular.min.js"></script>
     <script src="angular-route.js"></script>
-    <script src="angular-ui-router.js"></script>
+    <script src="angular-ui-router.min.js"></script>
     <script src="angular-resource.js"></script>
     <script src="../Modules/mainApp.js"></script>
+    <script src="../Modules/mainController.js"></script>
+    <script src="../Modules/mainFactory.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,14 +34,12 @@
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="home">Home</a></li>
                     <li><a ui-sref="arena">Arena</a></li>
-                    <%# <li><a href="#/contact">Contact</a></li>%>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
-        <div ui-view>
-        </div>
+        <div ui-view></div>
     </div>
 </body>
 </html>
